@@ -19,5 +19,5 @@ schema_view = get_swagger_view(title='Pastebin API')
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^schema/$', schema_view),
+    url(r'^docs/$', schema_view),
 ]
