@@ -28,10 +28,25 @@ def api_root(request, format=None):
 
 class AgendaViewSet(viewsets.ModelViewSet):
     """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
+    retrieve:
+        Return a user instance.
 
+    list:
+        Return all users, ordered by most recently joined.
+
+    create:
+        Create a new user.
+
+    delete:
+        Remove an existing user.
+
+    partial_update:
+        Update one or more fields on an existing user.
+
+    update:
+        Update a user.
     """
+    
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
