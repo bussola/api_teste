@@ -20,11 +20,11 @@ class Snippet(models.Model):
 	paciente = models.CharField(max_length=100, blank=True, default='')
 	procedimento = models.CharField(max_length=100, blank=True, default='')
 
-	title = models.CharField(max_length=100, blank=True, default='')
-	code = models.TextField()
-	linenos = models.BooleanField(default=False)
-	language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
-	style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
+	# title = models.CharField(max_length=100, blank=True, default='')
+	# code = models.TextField()
+	# linenos = models.BooleanField(default=False)
+	# language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
+	# style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
 	owner = models.ForeignKey('auth.User', related_name='agendamento', on_delete=models.CASCADE)
 	highlighted = models.TextField()
