@@ -1,6 +1,5 @@
 from django.conf.urls import url
 from . import views
-from bendita.views import subscribe
 
 
 app_name = 'iclinicapp'
