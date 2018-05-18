@@ -13,6 +13,13 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Snippet(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
+
+	data = models.DateTimeField(blank=True)
+	hor_inicio = models.TimeField(blank=True, 'hora inicio')
+	hor_final = models.TimeField(blank=True, 'hora final')
+	paciente = models.CharField(max_length=100, blank=True, default='')
+	procedimento = models.CharField(max_length=100, blank=True, default='')
+
 	title = models.CharField(max_length=100, blank=True, default='')
 	code = models.TextField()
 	linenos = models.BooleanField(default=False)
