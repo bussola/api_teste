@@ -1,0 +1,20 @@
+[0;1;32m●[0m gunicorn.service - gunicorn daemon
+   Loaded: loaded (/etc/systemd/system/gunicorn.service; enabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Fri 2018-05-11 14:55:10 UTC; 6 days ago
+ Main PID: 7662 (gunicorn)
+   CGroup: /system.slice/gunicorn.service
+           ├─7662 /home/bussola/myproject/myprojectenv/bin/python3 /home/bussola/myproject/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/bussola/myproject/myproject/myproject.sock myproject.wsgi:application
+           ├─7680 /home/bussola/myproject/myprojectenv/bin/python3 /home/bussola/myproject/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/bussola/myproject/myproject/myproject.sock myproject.wsgi:application
+           ├─7682 /home/bussola/myproject/myprojectenv/bin/python3 /home/bussola/myproject/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/bussola/myproject/myproject/myproject.sock myproject.wsgi:application
+           └─7683 /home/bussola/myproject/myprojectenv/bin/python3 /home/bussola/myproject/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/bussola/myproject/myproject/myproject.sock myproject.wsgi:application
+
+May 17 20:58:21 localhost gunicorn[7662]: b'' - - [17/May/2018:17:58:21 -0300] "GET / HTTP/1.0" 400 56046 "-" "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)"
+May 17 22:58:33 localhost gunicorn[7662]: Invalid HTTP_HOST header: 'www.viniciusbussola.com.br'. You may need to add 'www.viniciusbussola.com.br' to ALLOWED_HOSTS.
+May 17 22:58:33 localhost gunicorn[7662]: b'' - - [17/May/2018:19:58:33 -0300] "GET /robots.txt HTTP/1.0" 400 56087 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:59.0) Gecko/20100101 Firefox/59.0"
+May 17 22:58:34 localhost gunicorn[7662]: Invalid HTTP_HOST header: 'www.viniciusbussola.com.br'. You may need to add 'www.viniciusbussola.com.br' to ALLOWED_HOSTS.
+May 17 22:58:34 localhost gunicorn[7662]: b'' - - [17/May/2018:19:58:34 -0300] "GET / HTTP/1.0" 400 56532 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:59.0) Gecko/20100101 Firefox/59.0"
+May 17 23:00:52 localhost gunicorn[7662]: Invalid HTTP_HOST header: '/home/bussola/myproject/myproject/myproject.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+May 17 23:00:52 localhost gunicorn[7662]: b'' - - [17/May/2018:20:00:52 -0300] "GET / HTTP/1.0" 400 55657 "-" "Mozilla/5.0(WindowsNT6.1;rv:31.0)Gecko/20100101Firefox/31.0"
+May 17 23:28:43 localhost gunicorn[7662]: b'' - - [17/May/2018:20:28:43 -0300] "GET / HTTP/1.0" 200 7537 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+May 17 23:33:24 localhost systemd[1]: Started gunicorn daemon.
+May 17 23:33:52 localhost systemd[1]: Started gunicorn daemon.
