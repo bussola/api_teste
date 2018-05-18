@@ -1,4 +1,4 @@
-from iclinicapp.models import Snippet
+from iclinicapp.models import Agenda
 from iclinicapp.serializers import SnippetSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
@@ -33,15 +33,15 @@ class SnippetViewSet(viewsets.ModelViewSet):
 
     Additionally we also provide an extra `highlight` action.
     """
-    queryset = Snippet.objects.all()
+    queryset = Agenda.objects.all()
     serializer_class = SnippetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 
-    @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
-    def highlight(self, request, *args, **kwargs):
-        snippet = self.get_object()
-        return Response(snippet.highlighted)
+    # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
+    # def highlight(self, request, *args, **kwargs):
+    #     agenda = self.get_object()
+    #     return Response(agenda.highlighted)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

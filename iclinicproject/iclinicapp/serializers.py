@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from iclinicapp.models import Snippet, PROC_CHOICES
+from iclinicapp.models import Agenda, PROC_CHOICES
 from django.contrib.auth.models import User
 
 class SnippetSerializer(serializers.HyperlinkedModelSerializer):
@@ -7,7 +7,7 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
     #highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 
     class Meta:
-        model = Snippet
+        model = Agenda
         fields = ('url', 'id', 'owner',
         		  'data', 'hor_inicio', 'hor_final', 'paciente', 'procedimento')
                   # 'title', 'code', 'linenos', 'language', 'style')

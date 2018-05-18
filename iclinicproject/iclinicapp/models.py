@@ -16,7 +16,7 @@ PROC_CHOICES = (
     ('horario bloqueado','HORARIO BLOQUEADO'),
 )
 
-class Snippet(models.Model):
+class Agenda(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 
 	data = models.DateField(blank=True)
