@@ -35,7 +35,29 @@ class AgendaViewSet(viewsets.ModelViewSet):
         Return all meeting, ordered by most recently added.
 
     create:
-        Create a new meeting.
+        Creates a new Meeting
+
+        Body example:
+
+            {
+                "hor_final": "string",
+                "hor_inicio": "string",
+                "paciente": "string",
+                "data": "string",
+                "procedimento": "string"
+            }
+
+        omit_serializer: true
+        parameters:
+            - name: body
+              description: Body
+              required: true
+              paramType: body
+        responseMessages:
+            - code: 201
+              message: Cart created
+            - code: 400
+              message: partnership_id does not exist
 
     delete:
         Remove an existing meeting.
