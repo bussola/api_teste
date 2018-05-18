@@ -24,7 +24,7 @@ class Snippet(models.Model):
 	hor_final = models.TimeField(blank=True)
 	paciente = models.CharField(max_length=100, blank=True, default='')
 	#procedimento = models.CharField(max_length=100, blank=True, default='')
-	procedimento = models.CharField(choices=PROC_CHOICES, default='consulta')
+	procedimento = models.CharField(max_length=17, choices=PROC_CHOICES, default='consulta')
 
 	# title = models.CharField(max_length=100, blank=True, default='')
 	# code = models.TextField()
