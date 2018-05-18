@@ -64,7 +64,11 @@ class AgendaViewSet(viewsets.ModelViewSet):
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    This viewset automatically provides `list` and `detail` actions.
+    retrieve:
+        Return a user instance.
+
+    list:
+        Return all user, ordered by most recently added.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
