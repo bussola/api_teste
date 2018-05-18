@@ -1,16 +1,20 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
+from rest_framework import routers
 from . import views
 
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 app_name = 'iclinicapp'
-urlpatterns = [
-    url(r'^$', views.pagina_inicial, name='pagina_inicial'),
-    # url(r'^index$', views.pagina_inicial, name='pagina_inicial'),
-    # url(r'^about$', views.pagina_about, name='pagina_about'),
-    # url(r'^products$', views.pagina_products, name='pagina_products'),
-    # url(r'^store$', views.pagina_store, name='pagina_store'),
-    # url(r'^subscribe/', views.subscribe, name = "subscribe"),
-    
-    # url(r'^teste$', views.teste, name='teste'),
 
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
+
+# urlpatterns = [
+#     url(r'^$', views.pagina_inicial, name='pagina_inicial'),
+# ]
