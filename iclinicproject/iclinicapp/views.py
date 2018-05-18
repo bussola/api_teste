@@ -1,5 +1,5 @@
 from iclinicapp.models import Agenda
-from iclinicapp.serializers import SnippetSerializer
+from iclinicapp.serializers import AgendaSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
 from iclinicapp.serializers import UserSerializer
@@ -22,11 +22,11 @@ from rest_framework.decorators import action
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'agendamento': reverse('snippet-list', request=request, format=format)
+        'agendamento': reverse('agenda-list', request=request, format=format)
     })
 
 
-class SnippetViewSet(viewsets.ModelViewSet):
+class AgendaViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
@@ -34,7 +34,7 @@ class SnippetViewSet(viewsets.ModelViewSet):
     Additionally we also provide an extra `highlight` action.
     """
     queryset = Agenda.objects.all()
-    serializer_class = SnippetSerializer
+    serializer_class = AgendaSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 

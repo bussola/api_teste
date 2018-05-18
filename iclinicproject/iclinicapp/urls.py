@@ -10,7 +10,7 @@ from rest_framework_swagger.views import get_swagger_view
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'agendamento', views.SnippetViewSet)
+router.register(r'agendamento', views.AgendaViewSet)
 router.register(r'users', views.UserViewSet)
 
 #schema_view = get_schema_view(title='Pastebin API')
