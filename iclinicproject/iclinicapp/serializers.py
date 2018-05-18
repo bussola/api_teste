@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from iclinicapp.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+from iclinicapp.models import Snippet, PROC_CHOICES
 from django.contrib.auth.models import User
 
 class SnippetSerializer(serializers.HyperlinkedModelSerializer):
