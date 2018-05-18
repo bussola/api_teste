@@ -1,3 +1,7 @@
 from django.shortcuts import render
+import requests
 
-# Create your views here.
+
+
+def pagina_inicial(request):
+    return render(request, 'index.html')
