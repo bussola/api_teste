@@ -15,8 +15,8 @@ class Snippet(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 
 	data = models.DateTimeField(blank=True)
-	hor_inicio = models.TimeField(blank=True, 'hora inicio')
-	hor_final = models.TimeField(blank=True, 'hora final')
+	hor_inicio = models.TimeField(blank=True)
+	hor_final = models.TimeField(blank=True)
 	paciente = models.CharField(max_length=100, blank=True, default='')
 	procedimento = models.CharField(max_length=100, blank=True, default='')
 
