@@ -27,9 +27,13 @@ Including another URLconf
 #     url(r'^', include('iclinicapp.urls')),
 # ]
 
-
+from django.conf.urls import include
 from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^', include('iclinicapp.urls')),
+]
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls')),
 ]
