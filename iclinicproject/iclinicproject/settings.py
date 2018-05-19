@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db_iclinic',
-        'USER': 'iclinic',
-        'PASSWORD': 'senha',
+        'USER': 'postgres',
+        'PASSWORD': 'fuvest',
         'HOST': 'localhost',
         'PORT': '',
     }
