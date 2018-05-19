@@ -14,7 +14,7 @@ router.register(r'agendamento', views.AgendaViewSet)
 router.register(r'users', views.UserViewSet)
 
 #schema_view = get_schema_view(title='Pastebin API')
-schema_view = get_swagger_view(title='Pastebin API')
+schema_view = get_swagger_view(title='Agendamento API')
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
