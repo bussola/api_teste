@@ -40,8 +40,8 @@ class AgendaViewSet(viewsets.ModelViewSet):
         Body example:
 
             {
-                "hor_final": "string",
-                "hor_inicio": "string",
+                "hora_final": "string",
+                "hora_inicio": "string",
                 "paciente": "string",
                 "data": "string",
                 "procedimento": "string"
