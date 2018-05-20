@@ -16,6 +16,7 @@ class IclinicModelsTestCase(TestCase):
 		instance = Agenda.objects.values('data')[0]
 		description = instance['data']
 		self.assertEqual(description, datetime.date(2018, 5, 19))
+		self.assertTrue( description >= datetime.datetime.now() )
 
 	def test_2(self):
 		a = 1
