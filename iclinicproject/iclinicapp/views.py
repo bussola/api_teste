@@ -18,6 +18,9 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 
 
+from rest_framework import mixins
+from rest_framework_bulk.mixins import BulkUpdateModelMixin
+
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
@@ -26,72 +29,86 @@ def api_root(request, format=None):
     })
 
 
-class AgendaViewSet(viewsets.ModelViewSet):
+
+class AgendaViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, BulkUpdateModelMixin, generics.GenericAPIView):
     """
-    retrieve:
-        Return a meeting instance.
-
-    list:
-        Return all meeting, ordered by most recently added.
-
-    create:
-        Creates a new Meeting
-
-        Body example:
-
-            {
-                "hora_final": "string",
-                "hora_inicio": "string",
-                "paciente": "string",
-                "data": "string",
-                "procedimento": "string"
-            }
-
-        omit_serializer: true
-        parameters:
-            - name: body
-              description: Body
-              required: true
-              paramType: body
-        responseMessages:
-            - code: 201
-              message: Cart created
-            - code: 400
-              message: partnership_id does not exist
-
-    delete:
-        Remove an existing meeting.
-
-    partial_update:
-        Update one or more fields on an existing meeting.
-
-    update:
-        Update a meeting.
+    ---
+    GET:
+        consumes:
+            - application/vnd.api+json
+        produces:
+            - application/vnd.api+json
     """
 
-    queryset = Agenda.objects.all()
-    serializer_class = AgendaSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-                          IsOwnerOrReadOnly,)
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
-    # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
-    # def highlight(self, request, *args, **kwargs):
-    #     agenda = self.get_object()
-    #     return Response(agenda.highlighted)
+    def put(self, request, *args, **kwargs):
+        return self.bulk_update(request, *args, **kwargs)
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    def patch(self, request, *args, **kwargs):
+        return self.partial_bulk_update(request, *args, **kwargs)
 
-    # def list(self, request):
-    #     queryset = User.objects.all()
-    #     serializer = UserSerializer(queryset, many=True)
-    #     return Response(serializer.data)
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
-    # def retrieve(self, request, pk=None):
-    #     queryset = User.objects.all()
-    #     user = get_object_or_404(queryset, pk=pk)
-    #     serializer = UserSerializer(user)
-    #     return Response(serializer.data)
+    def get_queryset(self):
+        return Agenda.objects.all()
+
+    def get_serializer_class(self):
+        return AgendaSerializer
+
+
+
+
+
+
+
+
+# class AgendaViewSet(viewsets.ModelViewSet):
+#     """
+#     retrieve:
+#         Return a meeting instance.
+
+#     list:
+#         Return all meeting, ordered by most recently added.
+
+#     create:
+#         Creates a new Meeting
+
+#     delete:
+#         Remove an existing meeting.
+
+#     partial_update:
+#         Update one or more fields on an existing meeting.
+
+#     update:
+#         Update a meeting.
+#     """
+
+#     queryset = Agenda.objects.all()
+#     serializer_class = AgendaSerializer
+#     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+#                           IsOwnerOrReadOnly,)
+
+#     # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
+#     # def highlight(self, request, *args, **kwargs):
+#     #     agenda = self.get_object()
+#     #     return Response(agenda.highlighted)
+
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
+
+#     # def list(self, request):
+#     #     queryset = User.objects.all()
+#     #     serializer = UserSerializer(queryset, many=True)
+#     #     return Response(serializer.data)
+
+#     # def retrieve(self, request, pk=None):
+#     #     queryset = User.objects.all()
+#     #     user = get_object_or_404(queryset, pk=pk)
+#     #     serializer = UserSerializer(user)
+#     #     return Response(serializer.data)
         
 
 
