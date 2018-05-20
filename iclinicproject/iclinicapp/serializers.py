@@ -13,6 +13,11 @@ class AgendaSerializer(serializers.HyperlinkedModelSerializer):
                   'paciente', 'procedimento')
                   # 'title', 'code', 'linenos', 'language', 'style')
 
+    # def conditional_field(self, obj):
+    #     # do your conditional logic here
+    #     # and return appropriate result
+    #     return obj.content_type > obj.object_id
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     agendamento = serializers.HyperlinkedRelatedField(many=True, view_name='agenda-detail', read_only=True)
