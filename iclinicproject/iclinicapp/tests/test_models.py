@@ -1,12 +1,14 @@
 from django.test import TestCase
 from iclinicapp.models import Agenda
-from rest_framework import serializers
+from django.contrib.auth.models import User
+from django.contrib.auth.models import User
+
 
 
 class AnimalTestCase(TestCase):
 	def setUp(self):
-		owner = serializers.ReadOnlyField(source='owner.username')
-		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=owner, highlighted="shero")
+		user = User.objects.get(id=user_id)
+		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=user, highlighted="shero")
 		#Agenda.objects.create(data="05/09/2017", hora_inicio="10:10:AM")
 
 	def test_1(self):
