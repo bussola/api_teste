@@ -18,7 +18,7 @@ class AnimalTestCase(TestCase):
 
 	def test_1(self):
 		instance = Agenda.objects.values('data')[0]
-		description = instance['description']
+		description = instance['data']
 		self.assertEqual(description, '2018-05-19')
 
 	def test_2(self):
