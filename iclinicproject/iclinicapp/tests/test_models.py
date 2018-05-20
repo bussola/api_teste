@@ -7,8 +7,9 @@ from django.contrib.auth.models import User
 
 class AnimalTestCase(TestCase):
 	def setUp(self):
-		User.objects.create(username="Jose")
-		user = User.objects.values('username')[0]
+		user = User
+		# User.objects.create(username="Jose")
+		# user = User.objects.values('username')[0]
 		#user = User.objects.get(id=user_id)
 		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=user, highlighted="shero")
 		#Agenda.objects.create(data="05/09/2017", hora_inicio="10:10:AM")
