@@ -30,7 +30,8 @@ def api_root(request, format=None):
 
 
 
-class AgendaViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, BulkUpdateModelMixin, generics.GenericAPIView):
+#class AgendaViewSet(mixins.RetrieveModelMixin, mixins.ListModelMixin, BulkUpdateModelMixin, generics.GenericAPIView):
+class AgendaViewSet(viewsets.ModelViewSet):
     """
     ---
     GET:
