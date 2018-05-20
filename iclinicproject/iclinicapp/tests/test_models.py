@@ -7,7 +7,9 @@ from django.contrib.auth.models import User
 
 class AnimalTestCase(TestCase):
 	def setUp(self):
-		user = User(username="Jose")
+		u = User(username="Jose")
+		u.save()
+		user = u
 		# User.objects.create(username="Jose")
 		# user = User.objects.values('username')[0]
 		#user = User.objects.get(id=user_id)
