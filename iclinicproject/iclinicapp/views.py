@@ -19,7 +19,7 @@ from rest_framework.decorators import action
 
 
 from rest_framework import mixins
-from rest_framework_bulk.mixins import BulkUpdateModelMixin
+#from rest_framework_bulk.mixins import BulkUpdateModelMixin
 
 @api_view(['GET'])
 def api_root(request, format=None):
