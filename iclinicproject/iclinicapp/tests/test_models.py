@@ -20,4 +20,4 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_2(self):
 		a = 1
-		assert a == 2
+		assert a == 1
