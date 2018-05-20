@@ -19,7 +19,7 @@ class AnimalTestCase(TestCase):
 	def test_1(self):
 		instance = Agenda.objects.values('data')[0]
 		description = instance['data']
-		self.assertEqual(description, 'datetime.date(2018, 5, 19)')
+		self.assertEqual(description, datetime.date(2018, 5, 19))
 
 	def test_2(self):
 		a = 1
