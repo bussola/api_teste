@@ -25,6 +25,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', dados)
+		print(response.status_code)
 		assert response.status_code == 200
 		#self.assertRaises(Exception, Agenda, data='2018-05-20')
 
