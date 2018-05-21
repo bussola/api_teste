@@ -76,7 +76,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.put('/agendamento/', dados, format='json')
-		assert response.status_code == 204
+		assert response.status_code == 404
 
 
 	# def test_delete(self):
