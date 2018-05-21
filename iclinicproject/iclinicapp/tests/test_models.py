@@ -18,15 +18,15 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_data_passado(self):
 		dados = {
-			'data': '2018-05-20',
+			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
 			'procedimento':'consulta',
 			'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', dados)
-		description = response
-		assert response.status_code == 403
+		#assert response.status_code == 403
+		self.assertRaises(Exception, Agenda, data='2018-05-20')
 
 
 	def test_2(self):
