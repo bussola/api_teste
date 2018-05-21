@@ -2,10 +2,11 @@ from rest_framework import serializers
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 import datetime
+from rest_framework.fields import CurrentUserDefault
 
 class AgendaSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-    owner = context['request.user']
+    #owner = serializers.ReadOnlyField(source='owner.username')
+    owner = CurrentUserDefault() 
 
     class Meta:
         model = Agenda
