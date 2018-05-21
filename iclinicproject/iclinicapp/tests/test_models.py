@@ -39,7 +39,7 @@ class IclinicModelsTestCase(TestCase):
 		assert response.status_code == 200
 
 
-	def test_put(self):
+	def test_post(self):
 		dados = {
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
@@ -47,7 +47,7 @@ class IclinicModelsTestCase(TestCase):
 			'paciente':"Jose",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
-		response = self.client.post('/agendamento/', data=dados)
+		response = self.client.post('/agendamento/', dados)
 		print(response.status_code)
 		assert response.status_code == 200
 
