@@ -25,6 +25,7 @@ class IclinicModelsTestCase(TestCase):
 		response = self.client.post('/agendamento/', dados)
 		description = response
 		assert response.status_code == 403
+	
 
 	def test_2(self):
 		a = 1
