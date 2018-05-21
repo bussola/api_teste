@@ -69,4 +69,4 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_login(self):
 		response = self.client.login(username='lauren', password='secret')
-		assert response.status_code == 200
+		assert response == True
