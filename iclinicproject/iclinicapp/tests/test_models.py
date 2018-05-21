@@ -2,7 +2,7 @@ from django.test import TestCase
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 import datetime
-
+from rest_framework.fields import CurrentUserDefault
 
 
 class IclinicModelsTestCase(TestCase):
