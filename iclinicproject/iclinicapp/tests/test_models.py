@@ -68,34 +68,37 @@ class IclinicModelsTestCase(APITestCase):
 		assert response.status_code == 200
 
 
-	# def test_put(self):
-	# 	dados = {
-	# 		'data': '2018-05-30',
-	# 		'hora_inicio': "10:10:AM",
-	# 		'hora_final': "10:10:AM",
-	# 		'paciente':"Joao",
-	# 		'procedimento':'consulta',
-	# 		'owner':'iclinic',}
-	# 	response = self.client.put('/agendamento/1/', dados)
-	# 	assert response.status_code == 200
-
-
-	def test_z_delete(self):
+	def test_put(self):
 		dados = {
-			'id': '101',
+			'id': '200',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
-			'paciente':"Jose",
+			'paciente':"Joao",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
 		assert response.status_code == 201
-		response = self.client.delete("/agendamento/", data=dados)
+		response = self.client.put('/agendamento/1/', dados)
 		assert response.status_code == 200
-		#assert response.status_code == 202
-		#assert response.status_code == 204
-		#self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+	# def test_z_delete(self):
+	# 	dados = {
+	# 		'id': '101',
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':'iclinic',}
+	# 	response = self.client.post('/agendamento/', dados, format='json')
+	# 	assert response.status_code == 201
+	# 	response = self.client.delete("/agendamento/", dados)
+	# 	assert response.status_code == 200
+	# 	#assert response.status_code == 202
+	# 	#assert response.status_code == 204
+	# 	#self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 	# def test_login(self):
