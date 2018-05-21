@@ -6,6 +6,8 @@ import datetime
 from urllib import request
 
 
+IclinicModelsTestCase.allow_database_queries = True
+
 class IclinicModelsTestCase(SimpleTestCase):
 	def setUp(self):
 		u = User.objects.create_user(username="joao", first_name='olivia')
