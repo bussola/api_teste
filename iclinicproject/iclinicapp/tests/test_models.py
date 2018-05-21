@@ -68,15 +68,14 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_put(self):
 		dados = {
-			'id': '100',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 			'paciente':"Joao",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
-		response = self.client.put('/agendamento/100/', dados)
-		assert response.status_code == 204
+		response = self.client.put('/agendamento/1/', dados)
+		assert response.status_code == 200
 
 
 	# def test_delete(self):
