@@ -37,6 +37,8 @@ class IclinicModelsTestCase(TestCase):
 		response = self.client.get('/users/')
 		assert response.status_code == 200
 
+
+
 	def test_get_agendamento(self):
 		response = self.client.get('/agendamento/1/')
 		assert response.status_code == 200
@@ -77,4 +79,4 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_login(self):
 		response = self.client.login(username='iclinic', password='senha123')
-		assert response == True
+		assert response.status_code == 201
