@@ -1,6 +1,7 @@
 from django.test import TestCase
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
+from rest_framework import serializers
 import datetime
 
 
