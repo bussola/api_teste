@@ -25,7 +25,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', dados)
-		assert response.status_code == 404
+		assert response.status_code == 403
 		#self.assertRaises(Exception, Agenda, data='2018-05-20')
 
 
