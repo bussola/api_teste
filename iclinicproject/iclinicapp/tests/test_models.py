@@ -29,16 +29,12 @@ class IclinicModelsTestCase(TestCase):
 		#self.assertRaises(Exception, Agenda, data='2018-05-20')
 
 	def test_get(self):
-		# dados = {
-		# 	'data': '2018-05-30',
-		# 	'hora_inicio': "10:10:AM",
-		# 	'hora_final': "10:10:AM",
-		#    	'paciente':"Jose",
-		# 	'procedimento':'consulta',
-		# 	'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', 1)
 		assert response.status_code == 200
-		#self.assertRaises(Exception, Agenda, data='2018-05-20')
+
+	def test_get_all(self):
+		response = self.client.post('/agendamento/')
+		assert response.status_code == 200
 
 
 	def test_2(self):
