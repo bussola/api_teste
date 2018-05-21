@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 import datetime
 
 class AgendaSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    #owner = serializers.ReadOnlyField(source='owner.username')
+    owner = get_user(request)
 
     class Meta:
         model = Agenda
