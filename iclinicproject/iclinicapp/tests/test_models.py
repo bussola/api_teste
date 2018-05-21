@@ -6,9 +6,6 @@ import datetime
 from urllib import request
 
 
-global user_id 
-user_id = request.user.id
-
 class IclinicModelsTestCase(TestCase):
 	def setUp(self):
 		u = User.objects.create_user(username="joao", first_name='olivia')
