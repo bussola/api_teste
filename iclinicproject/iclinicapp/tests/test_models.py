@@ -78,7 +78,7 @@ class IclinicModelsTestCase(TestCase):
 		response = self.client.post('/agendamento/', dados, format='json')
 		response = self.client.delete("/agendamento/", dados, format='json')
 		#assert response.status_code == 200
-		assert response.status_code == 202
+		#assert response.status_code == 202
 		assert response.status_code == 204
 		#self.assertEqual(response.status_code, status.HTTP_200_OK)
 
