@@ -39,26 +39,26 @@ class IclinicModelsTestCase(TestCase):
 		assert response.status_code == 200
 
 
-	def test_put(self):
-		dados = {
-			'data': '2018-05-30',
-			'hora_inicio': "10:10:AM",
-			'hora_final': "10:10:AM",
-			'paciente':"Jose",
-			'procedimento':'consulta',
-			'owner':str(self.user.id),}
-		response = self.client.post('/agendamento/', data=dados)
-		print(response.status_code)
-		assert response.status_code == 200
+	# def test_put(self):
+	# 	dados = {
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':str(self.user.id),}
+	# 	response = self.client.post('/agendamento/', data=dados)
+	# 	print(response.status_code)
+	# 	assert response.status_code == 200
 
 
-	def test_delete(self):
-		dados = {
-			'data': '2018-05-30',
-			'hora_inicio': "10:10:AM",
-			'hora_final': "10:10:AM",
-			'paciente':"Jose",
-			'procedimento':'consulta',
-			'owner':str(self.user.id),}
-		response = self.client.delete("/agendamento/", data=dados)
-		assert response.status_code == 200
+	# def test_delete(self):
+	# 	dados = {
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':str(self.user.id),}
+	# 	response = self.client.delete("/agendamento/", data=dados)
+	# 	assert response.status_code == 200
