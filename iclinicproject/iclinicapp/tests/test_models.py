@@ -79,7 +79,7 @@ class IclinicModelsTestCase(APITestCase):
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
 		assert response.status_code == 201
-		response = self.client.put('/agendamento/1/', dados)
+		response = self.client.put('/agendamento/', dados)
 		assert response.status_code == 200
 
 
