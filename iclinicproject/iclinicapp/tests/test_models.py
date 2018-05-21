@@ -1,22 +1,12 @@
 from django.test import TestCase
-from rest_framework.test import APITestCase
-from django.urls import reverse
+from rest_framework.test import APITestCase, APIRequestFactory
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 from rest_framework import serializers
 import datetime
 from urllib import request
+from django.shortcuts import reverse
 
-
-class DeleteUserTest(APITestCase):
-    def setUp(self):
-        self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
-        self.client.login(username='john', password='johnpassword')
-        self.user = User.objects.create(username="mikey")
-
-    def test_can_delete_user(self):
-        response = self.client.delete(reverse('user-detail', args=[self.user.id]))
-        assert response.status_code == 200
 
 class IclinicModelsTestCase(APITestCase):
 	def setUp(self):
@@ -55,7 +45,7 @@ class IclinicModelsTestCase(APITestCase):
 
 
 	#**********************  AGENDA   **********************
-	def test_post(self):
+	def subtest_post(self):
 		dados = {
 			'id': '100',
 			'data': '2018-05-30',
@@ -65,8 +55,11 @@ class IclinicModelsTestCase(APITestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
-		assert response.status_code == 201
+		return response
 
+	def test_post(self):
+		response = self.subtest_post()
+		assert response.status_code == 201
 
 	def test_get_agendamento(self):
 		response = self.client.get('/agendamento/1/')
@@ -77,20 +70,38 @@ class IclinicModelsTestCase(APITestCase):
 		response = self.client.get('/agendamento/')
 		assert response.status_code == 200
 
+	def test_z_delete(self):
+		response = self.client.delete('/agendamento/1/', format='json')
+		#response = self.client.delete('/agendamento/1/', dados, format='json')
+		print("***" + str(response) + "***")
+		assert response.status_code == 404
+
+
+	# def test_updating_agenda(self):
+	# 	response = self.client.put(reverse({'paciente': 'Jacaranda'}))
+	# 	#assert response.status_code == 200
+	# 	assertEqual('Jacaranda', response.data['paciente'])
+
 
 	# def test_put(self):
-	# 	dados = {
-	# 		'id': '200',
-	# 		'data': '2018-05-30',
-	# 		'hora_inicio': "10:10:AM",
-	# 		'hora_final': "10:10:AM",
-	# 		'paciente':"Joao",
-	# 		'procedimento':'consulta',
-	# 		'owner':'iclinic',}
-	# 	response = self.client.post('/agendamento/', dados, format='json')
-	# 	assert response.status_code == 201
-	# 	response = self.client.put('/agendamento/', dados)
-	# 	assert response.status_code == 200
+	# 	response = self.client.put('/agendamento/1/', {'paciente': 'Naves'}, kwargs={'pk': 1} , format='json')
+	# 	print(response)
+	# 	#self.assertEqual('Naves', response.data['paciente'])
+	# 	assert response.status_code == 404
+
+	# 	# dados = {
+	# 	# 	'id': '200',
+	# 	# 	'data': '2018-05-30',
+	# 	# 	'hora_inicio': "10:10:AM",
+	# 	# 	'hora_final': "10:10:AM",
+	# 	# 	'paciente':"Joao",
+	# 	# 	'procedimento':'consulta',
+	# 	# 	'owner':'iclinic',}
+	# 	# response = self.subtest_post()
+	# 	# assert response.status_code == 201
+	# 	# response = self.client.put('/agendamento/1/', dados, format='json')
+	# 	# print(response)
+	# 	# assert response.status_code == 404
 
 
 	# def test_z_delete(self):
@@ -104,8 +115,9 @@ class IclinicModelsTestCase(APITestCase):
 	# 		'owner':'iclinic',}
 	# 	response = self.client.post('/agendamento/', dados, format='json')
 	# 	assert response.status_code == 201
-	# 	response = self.client.delete("/agendamento/", dados)
-	# 	assert response.status_code == 200
+	# 	response = self.client.delete('/agendamento/101/', dados, format='json')
+	# 	print(response.status_code)
+	# 	assert response.status_code == 404
 	# 	#assert response.status_code == 202
 	# 	#assert response.status_code == 204
 	# 	#self.assertEqual(response.status_code, status.HTTP_200_OK)
