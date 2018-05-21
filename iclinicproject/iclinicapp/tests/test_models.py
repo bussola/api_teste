@@ -9,7 +9,8 @@ class IclinicModelsTestCase(TestCase):
 	def setUp(self):
 		u = User.objects.create_user(username="joao", first_name='olivia')
 		u.save()
-		self.user = u
+		#self.user = u
+		self.user CurrentUserDefault() 
 		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user, highlighted="shero")
 
 	def test_usuario_nao_autenticado(self):
