@@ -18,7 +18,7 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_usuario_nao_autenticado(self):
 		dados = {
-			'data': '2018-05-21',
+			'data': '2018-05-20',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
