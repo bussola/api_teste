@@ -16,16 +16,16 @@ class IclinicModelsTestCase(TestCase):
 		#self.user = user
 		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user)
 
-	def test_data_passado(self):
+	def test_data_futura(self):
 		dados = {
-			'data': '2018-05-20',
+			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
 			'procedimento':'consulta',
 			'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', dados)
-		assert response.status_code == 403
+		assert response.status_code == 200
 		#self.assertRaises(Exception, Agenda, data='2018-05-20')
 
 
