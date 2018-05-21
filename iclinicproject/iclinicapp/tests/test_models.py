@@ -6,7 +6,7 @@ import datetime
 from urllib import request
 
 
-IclinicModelsTestCase.allow_database_queries = True
+TestCase.allow_database_queries = True
 
 class IclinicModelsTestCase(SimpleTestCase):
 	def setUp(self):
