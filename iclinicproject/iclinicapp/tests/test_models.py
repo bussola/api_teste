@@ -53,15 +53,20 @@ class IclinicModelsTestCase(TestCase):
 		assert response.status_code == 201
 
 
-	def test_delete(self):
-		dados = {
-			'data': '2018-05-30',
-			'hora_inicio': "10:10:AM",
-			'hora_final': "10:10:AM",
-			'paciente':"Jose",
-			'procedimento':'consulta',
-			'owner':'iclinic',}
-		response = self.client.post('/agendamento/', dados, format='json')
-		response = self.client.delete("/agendamento/", dados, format='json')
-		assert response.status_code == 204
-		#self.assertEqual(response.status_code, status.HTTP_200_OK)
+	# def test_delete(self):
+	# 	dados = {
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':'iclinic',}
+	# 	response = self.client.post('/agendamento/', dados, format='json')
+	# 	response = self.client.delete("/agendamento/", dados, format='json')
+	# 	assert response.status_code == 204
+	# 	#self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+	def test_login(self):
+		response = self.client.login(username='lauren', password='secret')
+		assert response.status_code == 200
