@@ -3,7 +3,7 @@ from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 from rest_framework import serializers
 import datetime
-import requests 
+from urllib import request
 
 
 global user_id 
