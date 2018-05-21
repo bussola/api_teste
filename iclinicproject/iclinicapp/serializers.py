@@ -13,7 +13,7 @@ class AgendaSerializer(serializers.HyperlinkedModelSerializer):
                   'paciente', 'procedimento')
 
     def create(self, validated_data):
-        if validated_data['data'] <= datetime.datetime.now().date():
+        if validated_data['data'] < datetime.datetime.now().date():
             raise Exception
         return Agenda.objects.create(**validated_data)
 
