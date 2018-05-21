@@ -2,7 +2,6 @@ from django.test import TestCase
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 import datetime
-from rest_framework.fields import CurrentUserDefault
 
 
 class IclinicModelsTestCase(TestCase):
@@ -10,7 +9,7 @@ class IclinicModelsTestCase(TestCase):
 		u = User.objects.create_user(username="joao", first_name='olivia')
 		u.save()
 		#self.user = u
-		self.user = CurrentUserDefault() 
+		self.user = serializers.ReadOnlyField(source='owner.username')
 		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user, highlighted="shero")
 
 	def test_usuario_nao_autenticado(self):
