@@ -43,19 +43,9 @@ class IclinicModelsTestCase(TestCase):
 
 
 	#**********************  AGENDA   **********************
-	def test_get_agendamento(self):
-		response = self.client.get('/agendamento/1/')
-		assert response.status_code == 200
-
-
-	def test_get_all(self):
-		response = self.client.get('/agendamento/')
-		assert response.status_code == 200
-
-
 	def test_post(self):
 		dados = {
-			'id': '100',
+			'id': '1',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
@@ -66,16 +56,25 @@ class IclinicModelsTestCase(TestCase):
 		assert response.status_code == 201
 
 
+	def test_get_agendamento(self):
+		response = self.client.get('/agendamento/1/')
+		assert response.status_code == 200
+
+
+	def test_get_all(self):
+		response = self.client.get('/agendamento/')
+		assert response.status_code == 200
+
+
 	def test_put(self):
 		dados = {
-			'id': '1',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 			'paciente':"Joao",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
-		response = self.client.put('/agendamento/', dados, format='json')
+		response = self.client.put('/agendamento/1', dados, format='json')
 		assert response.status_code == 200
 
 
