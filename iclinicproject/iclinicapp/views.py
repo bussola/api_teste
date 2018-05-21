@@ -19,25 +19,25 @@ def api_root(request, format=None):
 
 
 class AgendaViewSet(viewsets.ModelViewSet):
-    """
-    retrieve:
-        Return a meeting instance.
+    # """
+    # retrieve:
+    #     Return a meeting instance.
 
-    list:
-        Return all meeting, ordered by most recently added.
+    # list:
+    #     Return all meeting, ordered by most recently added.
 
-    create:
-        Creates a new Meeting
+    # create:
+    #     Creates a new Meeting
 
-    delete:
-        Remove an existing meeting.
+    # delete:
+    #     Remove an existing meeting.
 
-    partial_update:
-        Update one or more fields on an existing meeting.
+    # partial_update:
+    #     Update one or more fields on an existing meeting.
 
-    update:
-        Update a meeting.
-    """
+    # update:
+    #     Update a meeting.
+    # """
 
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
