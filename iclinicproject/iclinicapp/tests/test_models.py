@@ -63,8 +63,6 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
-		print(response.status_code)
-		#self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 		assert response.status_code == 201
 
 
@@ -78,9 +76,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.put('/agendamento/', dados, format='json')
-		print(response.status_code)
-		#self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-		assert response.status_code == 200
+		assert response.status_code == 204
 
 
 	# def test_delete(self):
