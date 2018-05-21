@@ -78,19 +78,19 @@ class IclinicModelsTestCase(APITestCase):
 		assert response.status_code == 200
 
 
-	def test_put(self):
-		dados = {
-			'id': '200',
-			'data': '2018-05-30',
-			'hora_inicio': "10:10:AM",
-			'hora_final': "10:10:AM",
-			'paciente':"Joao",
-			'procedimento':'consulta',
-			'owner':'iclinic',}
-		response = self.client.post('/agendamento/', dados, format='json')
-		assert response.status_code == 201
-		response = self.client.put('/agendamento/', dados)
-		assert response.status_code == 200
+	# def test_put(self):
+	# 	dados = {
+	# 		'id': '200',
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Joao",
+	# 		'procedimento':'consulta',
+	# 		'owner':'iclinic',}
+	# 	response = self.client.post('/agendamento/', dados, format='json')
+	# 	assert response.status_code == 201
+	# 	response = self.client.put('/agendamento/', dados)
+	# 	assert response.status_code == 200
 
 
 	# def test_z_delete(self):
