@@ -66,32 +66,33 @@ class IclinicModelsTestCase(TestCase):
 		assert response.status_code == 200
 
 
-	def test_put(self):
-		dados = {
-			'data': '2018-05-30',
-			'hora_inicio': "10:10:AM",
-			'hora_final': "10:10:AM",
-			'paciente':"Joao",
-			'procedimento':'consulta',
-			'owner':'iclinic',}
-		response = self.client.put('/agendamento/1', dados, content_type='application/octet-stream', follow=False)
-		assert response.status_code == 200
-
-
-	# def test_delete(self):
+	# def test_put(self):
 	# 	dados = {
 	# 		'data': '2018-05-30',
 	# 		'hora_inicio': "10:10:AM",
 	# 		'hora_final': "10:10:AM",
-	# 		'paciente':"Jose",
+	# 		'paciente':"Joao",
 	# 		'procedimento':'consulta',
 	# 		'owner':'iclinic',}
-	# 	response = self.client.post('/agendamento/', dados, format='json')
-	# 	response = self.client.delete("/agendamento/", dados, format='json')
-	# 	#assert response.status_code == 200
-	# 	#assert response.status_code == 202
-	# 	assert response.status_code == 204
-	# 	#self.assertEqual(response.status_code, status.HTTP_200_OK)
+	# 	response = self.client.put('/agendamento/1', dados, content_type='application/octet-stream', follow=False)
+	# 	assert response.status_code == 200
+
+
+	def test_delete(self):
+		dados = {
+			'id': '100',
+			'data': '2018-05-30',
+			'hora_inicio': "10:10:AM",
+			'hora_final': "10:10:AM",
+			'paciente':"Jose",
+			'procedimento':'consulta',
+			'owner':'iclinic',}
+		response = self.client.post('/agendamento/', dados, format='json')
+		response = self.client.delete("/agendamento/100/", dados, format='json')
+		#assert response.status_code == 200
+		#assert response.status_code == 202
+		assert response.status_code == 204
+		#self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
 	# def test_login(self):
