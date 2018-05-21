@@ -106,11 +106,6 @@ class UserTestCase(APITestCase):
 		response = self.client.get('/users/')
 		assert response.status_code == 200
 
-	#GET users/ 
-	def test_3_get_all_users(self):
-		response = self.client.get('/users/')
-		assert response.status_code == 200
-
 
 class TimeTestCase(APITestCase):
 	#Testa uma data valida
