@@ -8,7 +8,7 @@ class AgendaSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Agenda
-        fields = ('url', 'id', 'owner',
+        fields = ('url', 'id',
         		  'data', 'hora_inicio', 'hora_final', 
                   'paciente', 'procedimento')
 
