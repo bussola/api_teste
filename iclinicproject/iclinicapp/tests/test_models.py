@@ -30,7 +30,7 @@ class IclinicModelsTestCase(TestCase):
 	# 	#self.assertRaises(Exception, Agenda, data='2018-05-20')
 
 	def test_get(self):
-		response = self.client.get('/agendamento/1')
+		response = self.client.get('/agendamento/1/')
 		assert response.status_code == 200
 
 	def test_get_all(self):
