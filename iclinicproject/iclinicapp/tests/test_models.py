@@ -80,7 +80,7 @@ class IclinicModelsTestCase(APITestCase):
 	# 	assert response.status_code == 200
 
 
-	def test_delete(self):
+	def test_z_delete(self):
 		# dados = {
 		# 	'id': '100',
 		# 	'data': '2018-05-30',
