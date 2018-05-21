@@ -16,7 +16,7 @@ class DeleteUserTest(APITestCase):
 
     def test_can_delete_user(self):
         response = self.client.delete(reverse('user-detail', args=[self.user.id]))
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        assert response.status_code == 204
 
 class IclinicModelsTestCase(APITestCase):
 	def setUp(self):
