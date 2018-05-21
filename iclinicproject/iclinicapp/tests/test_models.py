@@ -68,5 +68,5 @@ class IclinicModelsTestCase(TestCase):
 
 
 	def test_login(self):
-		response = self.client.login(username='lauren', password='secret')
+		response = self.client.login(username='iclinic', password='senha123')
 		assert response == True
