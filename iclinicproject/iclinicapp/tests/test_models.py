@@ -61,3 +61,4 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':str(self.user.id),}
 		response = self.client.delete("/agendamento/", data=dados)
+		assert response.status_code == 200
