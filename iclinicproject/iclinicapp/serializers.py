@@ -1,22 +1,21 @@
 from rest_framework import serializers
-from iclinicapp.models import Agenda, PROC_CHOICES
+from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
+import datetime
 
 class AgendaSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-    #highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 
     class Meta:
         model = Agenda
         fields = ('url', 'id', 'owner',
         		  'data', 'hora_inicio', 'hora_final', 
                   'paciente', 'procedimento')
-                  # 'title', 'code', 'linenos', 'language', 'style')
 
-    # def conditional_field(self, obj):
-    #     # do your conditional logic here
-    #     # and return appropriate result
-    #     return obj.content_type > obj.object_id
+    def create(self, validated_data):
+        if validated_data['data'] <= datetime.datetime.now().date():
+            raise Exception
+        return Agenda.objects.create(**validated_data)
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

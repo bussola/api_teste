@@ -26,7 +26,7 @@ SECRET_KEY = '*zv_iaregr3klx!rjzlr3qum!+%+y(-7@j9!5=abb3pe$&rt)='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['173.230.150.95']
+ALLOWED_HOSTS = ['173.230.150.95', '127.0.0.1']
 
 
 # Application definition
@@ -78,13 +78,17 @@ WSGI_APPLICATION = 'iclinicproject.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'db_iclinic',
+    #     'USER': 'iclinic',
+    #     'PASSWORD': 'senha',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_iclinic',
-        'USER': 'iclinic',
-        'PASSWORD': 'senha',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

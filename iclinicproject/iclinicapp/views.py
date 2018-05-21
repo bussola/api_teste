@@ -49,8 +49,8 @@ class AgendaViewSet(viewsets.ModelViewSet):
 
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-                          IsOwnerOrReadOnly,)
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+    #                       IsOwnerOrReadOnly,)
 
     # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
     # def highlight(self, request, *args, **kwargs):
