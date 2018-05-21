@@ -21,7 +21,7 @@ class IclinicModelsTestCase(TestCase):
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
 			'procedimento':'consulta',
-			'owner':str(self.user.id),
+			'owner':str(self.user),
 			'highlighted':'shero'}
 		response = self.client.post('/agendamento/', dados)
 		description = response
