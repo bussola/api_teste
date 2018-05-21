@@ -14,17 +14,16 @@ class IclinicModelsTestCase(TestCase):
 		#self.user = serializers.ReadOnlyField(source='owner.username')
 		#user = User.objects.get(id=user_id)
 		#self.user = user
-		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user, highlighted="shero")
+		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user)
 
-	def test_usuario_nao_autenticado(self):
+	def test_data_passado(self):
 		dados = {
 			'data': '2018-05-20',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
 			'procedimento':'consulta',
-			'owner':str(self.user.id),
-			'highlighted':'shero'}
+			'owner':str(self.user.id),}
 		response = self.client.post('/agendamento/', dados)
 		description = response
 		assert response.status_code == 403

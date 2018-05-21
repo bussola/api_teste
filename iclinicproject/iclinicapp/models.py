@@ -26,7 +26,7 @@ class Agenda(models.Model):
 	procedimento = models.CharField(max_length=17, choices=PROC_CHOICES, default='consulta')
 
 	owner = models.ForeignKey('auth.User', related_name='agendamento', on_delete=models.CASCADE, blank=True, null=True)
-	highlighted = models.TextField()
+	#highlighted = models.TextField()
 
 	class Meta:
 		ordering = ('created',)
