@@ -10,42 +10,41 @@ from django.shortcuts import reverse
 
 class IclinicModelsTestCase(APITestCase):
 	def setUp(self):
-		u = User.objects.create_user(username="joao", first_name='olivia')
+		u = User.objects.create_user(username="palito", first_name='olivia')
 		u.save()
 		self.user = u
-		#self.user = serializers.ReadOnlyField(source='owner.username')
-		#user = User.objects.get(id=user_id)
-		#self.user = user
-		Agenda.objects.create(data="2018-05-30", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user)
-
-	# def test_data_futura(self):
-	# 	dados = {
-	# 		'data': '2018-05-30',
-	# 		'hora_inicio': "10:10:AM",
-	# 		'hora_final': "10:10:AM",
-	# 	   	'paciente':"Jose",
-	# 		'procedimento':'consulta',
-	# 		'owner':str(self.user.id),}
-	# 	response = self.client.post('/agendamento/', dados)
-	# 	print(response.status_code)
-	# 	assert response.status_code == 200
-	# 	#self.assertRaises(Exception, Agenda, data='2018-05-20')
-
-
-
-	#**********************  USER   **********************
-	# def test_get_user(self):
-	# 	response = self.client.get('/users/1/')
-	# 	assert response.status_code == 200
-
-	def test_get_all_users(self):
-		response = self.client.get('/users/')
-		assert response.status_code == 200
-
+		Agenda.objects.create(id="301", data="2018-05-30", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user)
 
 
 	#**********************  AGENDA   **********************
-	def subtest_post(self):
+	def test_1_get_agendamento_existente(self):
+		response = self.client.get('/agendamento/301/')
+		assert response.status_code == 200
+
+	def test_2_get_agendamento_nao_existente(self):
+		response = self.client.get('/agendamento/302/')
+		assert response.status_code == 404
+
+	def test_3_agendamentos(self):
+		response = self.client.get('/agendamento/')
+		assert response.status_code == 200
+
+	def test_4_updating_agenda(self):
+		dados = {
+			'data': '2018-05-30',
+			'hora_inicio': "10:10:AM",
+			'hora_final': "10:10:AM",
+			'paciente':"Jose",
+			'procedimento':'consulta',
+			'owner':'iclinic',}
+		response = self.client.put('/agendamento/301/', dados, format='json')
+		assert response.status_code == 200
+
+	def test_5_delete(self):
+		response = self.client.delete('/agendamento/301/', format='json')
+		assert response.status_code == 204
+
+	def test_6_post_agendamento(self):
 		dados = {
 			'id': '100',
 			'data': '2018-05-30',
@@ -55,32 +54,23 @@ class IclinicModelsTestCase(APITestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
-		return response
-
-	def test_post(self):
-		response = self.subtest_post()
 		assert response.status_code == 201
 
-	def test_get_agendamento(self):
-		response = self.client.get('/agendamento/1/')
-		assert response.status_code == 200
 
 
-	def test_get_all(self):
-		response = self.client.get('/agendamento/')
-		assert response.status_code == 200
+	
 
-	def test_z_delete(self):
-		response = self.client.delete('/agendamento/1/', format='json')
-		#response = self.client.delete('/agendamento/1/', dados, format='json')
-		print("***" + str(response) + "***")
-		assert response.status_code == 404
+	
 
 
-	# def test_updating_agenda(self):
-	# 	response = self.client.put(reverse({'paciente': 'Jacaranda'}))
-	# 	#assert response.status_code == 200
-	# 	assertEqual('Jacaranda', response.data['paciente'])
+	# def test_z_delete(self):
+	# 	response = self.client.delete('/agendamento/1/', format='json')
+	# 	#response = self.client.delete('/agendamento/1/', dados, format='json')
+	# 	print("***" + str(response) + "***")
+	# 	assert response.status_code == 404
+
+
+
 
 
 	# def test_put(self):
@@ -126,3 +116,27 @@ class IclinicModelsTestCase(APITestCase):
 	# def test_login(self):
 	# 	response = self.client.login(username='iclinic', password='senha123')
 	# 	assert response.status_code == 201
+
+
+	#**********************  USER   **********************
+	# def test_get_user(self):
+	# 	response = self.client.get('/users/1/')
+	# 	assert response.status_code == 200
+
+	# def test_get_all_users(self):
+	# 	response = self.client.get('/users/')
+	# 	assert response.status_code == 200
+
+
+	# def test_data_futura(self):
+	# 	dados = {
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 	   	'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':str(self.user.id),}
+	# 	response = self.client.post('/agendamento/', dados)
+	# 	print(response.status_code)
+	# 	assert response.status_code == 200
+	# 	#self.assertRaises(Exception, Agenda, data='2018-05-20')
