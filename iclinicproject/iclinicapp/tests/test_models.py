@@ -47,9 +47,10 @@ class IclinicModelsTestCase(TestCase):
 			'paciente':"Jose",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
-		response = self.client.post('/agendamento/', dados)
+		response = self.client.post('/agendamento/', dados, format='json')
 		print(response.status_code)
-		assert response.status_code == 200
+		#self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+		assert response.status_code == 201
 
 
 	# def test_delete(self):
