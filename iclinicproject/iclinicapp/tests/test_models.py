@@ -11,8 +11,7 @@ class IclinicModelsTestCase(TestCase):
 		u.save()
 		#self.user = u
 		self.user = serializers.ReadOnlyField(source='owner.username')
-		#self.user = "iclinic"
-		#Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user, highlighted="shero")
+		Agenda.objects.create(data="2018-05-19", hora_inicio="10:10:AM", hora_final="10:10:AM", paciente="Jose", procedimento="Consulta", owner=self.user, highlighted="shero")
 
 	def test_usuario_nao_autenticado(self):
 		dados = {
@@ -21,7 +20,7 @@ class IclinicModelsTestCase(TestCase):
 			'hora_final': "10:10:AM",
 		   	'paciente':"Jose",
 			'procedimento':'consulta',
-			'owner':str(self.user),
+			'owner':str(self.user.id),
 			'highlighted':'shero'}
 		response = self.client.post('/agendamento/', dados)
 		description = response
