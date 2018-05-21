@@ -48,6 +48,13 @@ class AgendaViewSet(viewsets.ModelViewSet):
     #     serializer.save(owner=self.request.user)
 
 
+    def get(self, request, format=None):
+        """
+        SHERO LERO
+        """
+        pass
+
+
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     retrieve:
