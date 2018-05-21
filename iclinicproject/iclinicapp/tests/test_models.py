@@ -76,7 +76,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.put('/agendamento/100/', dados)
-		assert response.status_code == 200
+		assert response.status_code == 204
 
 
 	# def test_delete(self):
