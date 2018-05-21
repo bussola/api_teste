@@ -33,6 +33,20 @@ class IclinicModelsTestCase(TestCase):
 		response = self.client.get('/agendamento/1/')
 		assert response.status_code == 200
 
+
 	def test_get_all(self):
 		response = self.client.get('/agendamento/')
+		assert response.status_code == 200
+		
+
+	def test_put(self):
+		dados = {
+			'data': '2018-05-30',
+			'hora_inicio': "10:10:AM",
+			'hora_final': "10:10:AM",
+			'paciente':"Jose",
+			'procedimento':'consulta',
+			'owner':str(self.user.id),}
+		response = self.client.post('/agendamento/', dados)
+		print(response.status_code)
 		assert response.status_code == 200
