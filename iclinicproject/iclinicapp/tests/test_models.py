@@ -3,10 +3,11 @@ from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 from rest_framework import serializers
 import datetime
-from django.contrib.auth.models import User
 
 
 
+global user_id 
+user_id = request.user.id
 
 class IclinicModelsTestCase(TestCase):
 	def setUp(self):
