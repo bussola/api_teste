@@ -14,7 +14,7 @@ class AgendaSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         if validated_data['data'] < datetime.datetime.now().date():
-            raise Exception('A data utilizada esta no passado')
+            raise data_antiga_Exception('A data utilizada esta no passado')
         return Agenda.objects.create(**validated_data)
 
 
