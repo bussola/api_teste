@@ -45,7 +45,7 @@ class IclinicModelsTestCase(APITestCase):
 
 
 	#**********************  AGENDA   **********************
-	def test_post(self):
+	def subtest_post(self):
 		dados = {
 			'id': '100',
 			'data': '2018-05-30',
@@ -56,6 +56,9 @@ class IclinicModelsTestCase(APITestCase):
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
 		assert response.status_code == 201
+
+	def test_post(self):
+		subtest_post(self)
 
 
 	def test_get_agendamento(self):
