@@ -1,4 +1,6 @@
 from django.test import TestCase
+from rest_framework.test import APITestCase
+
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 from rest_framework import serializers
@@ -6,7 +8,7 @@ import datetime
 from urllib import request
 
 
-class IclinicModelsTestCase(TestCase):
+class IclinicModelsTestCase(APITestCase):
 	def setUp(self):
 		u = User.objects.create_user(username="joao", first_name='olivia')
 		u.save()
