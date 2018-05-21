@@ -1,11 +1,7 @@
-from django.test import TestCase
-from rest_framework.test import APITestCase, APIRequestFactory
+from rest_framework.test import APITestCase
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
-from rest_framework import serializers
-import datetime
-from urllib import request
-from django.shortcuts import reverse
+
 
 
 class AgendaTestCase(APITestCase):

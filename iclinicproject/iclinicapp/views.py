@@ -1,21 +1,13 @@
 from iclinicapp.models import Agenda
 from iclinicapp.serializers import AgendaSerializer
-from rest_framework import generics
 from django.contrib.auth.models import User
 from iclinicapp.serializers import UserSerializer
-from rest_framework import permissions
-from iclinicapp.permissions import IsOwnerOrReadOnly
-
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework.reverse import reverse
-
-
-from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import viewsets
-
-from rest_framework.decorators import action
+#from rest_framework import permissions
+#from iclinicapp.permissions import IsOwnerOrReadOnly
 
 
 @api_view(['GET'])
