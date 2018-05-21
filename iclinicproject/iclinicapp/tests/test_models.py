@@ -36,8 +36,3 @@ class IclinicModelsTestCase(TestCase):
 	def test_get_all(self):
 		response = self.client.post('/agendamento/')
 		assert response.status_code == 200
-
-
-	def test_2(self):
-		a = 1
-		assert a == 1
