@@ -52,11 +52,6 @@ class AgendaViewSet(viewsets.ModelViewSet):
     # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
     #                       IsOwnerOrReadOnly,)
 
-    # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
-    # def highlight(self, request, *args, **kwargs):
-    #     agenda = self.get_object()
-    #     return Response(agenda.highlighted)
-
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
 
