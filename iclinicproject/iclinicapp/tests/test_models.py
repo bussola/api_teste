@@ -6,7 +6,6 @@ import datetime
 from urllib import request
 
 
-TestCase.allow_database_queries = True
 
 class IclinicModelsTestCase(SimpleTestCase):
 	def setUp(self):
@@ -52,7 +51,7 @@ class IclinicModelsTestCase(SimpleTestCase):
 		response = self.client.put('/agendamento/1/', dados)
 		assert response.status_code == 200
 
-
+IclinicModelsTestCase.TestCase.allow_database_queries = True
 # class IclinicModelsTestCase(TestCase):
 # 	def setUp(self):
 # 		u = User.objects.create_user(username="joao", first_name='olivia')
