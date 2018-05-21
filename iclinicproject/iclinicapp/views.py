@@ -60,30 +60,6 @@ class AgendaViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    # def get(self, request, *args, **kwargs):
-    #     """
-    #         Return a meeting instance.
-    #     """
-    #     return self.retrieve(request, *args, **kwargs)
-
-    # def put(self, request, *args, **kwargs):
-    #     """
-    #         Update one or more fields on an existing meeting.
-    #     """
-    #     return self.bulk_update(request, *args, **kwargs)
-
-    # def list(self, request):
-    #     queryset = User.objects.all()
-    #     serializer = UserSerializer(queryset, many=True)
-    #     return Response(serializer.data)
-
-    # def retrieve(self, request, pk=None):
-    #     queryset = User.objects.all()
-    #     user = get_object_or_404(queryset, pk=pk)
-    #     serializer = UserSerializer(user)
-    #     return Response(serializer.data)
-        
-
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
