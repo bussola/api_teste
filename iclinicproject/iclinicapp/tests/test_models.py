@@ -1,12 +1,22 @@
 from django.test import TestCase
 from rest_framework.test import APITestCase
-
+from django.core.urlresolvers import reverse
 from iclinicapp.models import Agenda
 from django.contrib.auth.models import User
 from rest_framework import serializers
 import datetime
 from urllib import request
 
+
+class DeleteUserTest(APITestCase):
+    def setUp(self):
+        self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
+        self.client.login(username='john', password='johnpassword')
+        self.user = User.objects.create(username="mikey")
+
+    def test_can_delete_user(self):
+        response = self.client.delete(reverse('user-detail', args=[self.user.id]))
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
 class IclinicModelsTestCase(APITestCase):
 	def setUp(self):
