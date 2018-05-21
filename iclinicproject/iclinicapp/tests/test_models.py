@@ -55,6 +55,7 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_post(self):
 		dados = {
+			'id': '100',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
@@ -65,6 +66,20 @@ class IclinicModelsTestCase(TestCase):
 		print(response.status_code)
 		#self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 		assert response.status_code == 201
+
+
+	# def test_put(self):
+	# 	dados = {
+	# 		'data': '2018-05-30',
+	# 		'hora_inicio': "10:10:AM",
+	# 		'hora_final': "10:10:AM",
+	# 		'paciente':"Jose",
+	# 		'procedimento':'consulta',
+	# 		'owner':'iclinic',}
+	# 	response = self.client.post('/agendamento/', dados, format='json')
+	# 	print(response.status_code)
+	# 	#self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+	# 	assert response.status_code == 201
 
 
 	# def test_delete(self):
