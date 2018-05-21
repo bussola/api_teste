@@ -5,7 +5,7 @@ import datetime
 
 class AgendaSerializer(serializers.HyperlinkedModelSerializer):
     #owner = serializers.ReadOnlyField(source='owner.username')
-    owner = get_user(request)
+    owner =  self.context['request'].user
 
     class Meta:
         model = Agenda
