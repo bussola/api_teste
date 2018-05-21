@@ -60,6 +60,7 @@ class IclinicModelsTestCase(TestCase):
 			'hora_final': "10:10:AM",
 			'paciente':"Jose",
 			'procedimento':'consulta',
-			'owner':str(self.user.id),}
+			'owner':'iclinic',}
+		response = self.client.post('/agendamento/', dados, format='json')
 		response = self.client.delete("/agendamento/", dados, format='json')
 		assert response.status_code == 200
