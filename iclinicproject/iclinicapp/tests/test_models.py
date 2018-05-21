@@ -36,9 +36,9 @@ class IclinicModelsTestCase(TestCase):
 	# 	response = self.client.get('/users/1/')
 	# 	assert response.status_code == 200
 
-	def test_get_all_users(self):
-		response = self.client.get('/users/')
-		assert response.status_code == 200
+	# def test_get_all_users(self):
+	# 	response = self.client.get('/users/')
+	# 	assert response.status_code == 200
 
 
 
