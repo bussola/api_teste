@@ -74,7 +74,7 @@ class IclinicModelsTestCase(TestCase):
 			'paciente':"Joao",
 			'procedimento':'consulta',
 			'owner':'iclinic',}
-		response = self.client.put('/agendamento/1', dados, , content_type='application/octet-stream', follow=False, **extra)
+		response = self.client.put('/agendamento/1', dados, content_type='application/octet-stream', follow=False, **extra)
 		assert response.status_code == 200
 
 
