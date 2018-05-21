@@ -82,7 +82,7 @@ class IclinicModelsTestCase(APITestCase):
 
 	def test_z_delete(self):
 		dados = {
-			'id': '100',
+			'id': '101',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
@@ -90,7 +90,7 @@ class IclinicModelsTestCase(APITestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.post('/agendamento/', dados, format='json')
-		assert response.status_code == 200
+		assert response.status_code == 201
 		response = self.client.delete("/agendamento/", dados)
 		assert response.status_code == 200
 		#assert response.status_code == 202
