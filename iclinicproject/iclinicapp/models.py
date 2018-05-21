@@ -23,7 +23,6 @@ class Agenda(models.Model):
 	hora_inicio = models.TimeField(blank=True)
 	hora_final = models.TimeField(blank=True)
 	paciente = models.CharField(max_length=100, blank=True, default='')
-	#procedimento = models.CharField(max_length=100, blank=True, default='')
 	procedimento = models.CharField(max_length=17, choices=PROC_CHOICES, default='consulta')
 
 	owner = models.ForeignKey('auth.User', related_name='agendamento', on_delete=models.CASCADE, blank=True, null=True)

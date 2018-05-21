@@ -57,8 +57,8 @@ class AgendaViewSet(viewsets.ModelViewSet):
     #     agenda = self.get_object()
     #     return Response(agenda.highlighted)
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(owner=self.request.user)
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
