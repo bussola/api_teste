@@ -68,7 +68,7 @@ class IclinicModelsTestCase(TestCase):
 
 	def test_put(self):
 		dados = {
-			'id': '100',
+			'id': '1',
 			'data': '2018-05-30',
 			'hora_inicio': "10:10:AM",
 			'hora_final': "10:10:AM",
@@ -76,7 +76,7 @@ class IclinicModelsTestCase(TestCase):
 			'procedimento':'consulta',
 			'owner':'iclinic',}
 		response = self.client.put('/agendamento/', dados, format='json')
-		assert response.status_code == 404
+		assert response.status_code == 200
 
 
 	# def test_delete(self):
