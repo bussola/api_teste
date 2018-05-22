@@ -83,6 +83,7 @@ class AgendaTestCase(APITestCase):
 
 
 
+
 class UserTestCase(APITestCase):
 	#Cria um usuario para o teste com id = 301
 	def setUp(self):

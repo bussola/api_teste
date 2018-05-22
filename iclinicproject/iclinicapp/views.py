@@ -6,6 +6,7 @@ from rest_framework.decorators import api_view
 from rest_framework.reverse import reverse
 from rest_framework.response import Response
 from rest_framework import viewsets
+
 #from rest_framework import permissions
 #from iclinicapp.permissions import IsOwnerOrReadOnly
 
@@ -19,25 +20,41 @@ def api_root(request, format=None):
 
 
 class AgendaViewSet(viewsets.ModelViewSet):
-    # """
-    # retrieve:
-    #     Return a meeting instance.
+    """
+    retrieve:
+        Return a meeting instance.
 
-    # list:
-    #     Return all meeting, ordered by most recently added.
+        Status Code:
+        200: Successful operation
+        404: ID not found
 
-    # create:
-    #     Creates a new Meeting
+    list:
+        Return all meeting, ordered by most recently added.
 
-    # delete:
-    #     Remove an existing meeting.
+    create:
+        Creates a new Meeting
 
-    # partial_update:
-    #     Update one or more fields on an existing meeting.
+        Status Code:
+        201: Successful operation
 
-    # update:
-    #     Update a meeting.
-    # """
+
+    delete:
+        Remove an existing meeting.
+
+        Status Code:
+        204: Successful operation
+        404: ID not found
+
+    partial_update:
+        Update one or more fields on an existing meeting.
+
+    update:
+        Update a meeting.
+
+        Status Code:
+        200: Successful operation
+        404: ID not found
+    """
 
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
@@ -47,12 +64,6 @@ class AgendaViewSet(viewsets.ModelViewSet):
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
 
-
-    def get(self, request, format=None):
-        """
-        SHERO LERO
-        """
-        pass
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
