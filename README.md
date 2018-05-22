@@ -1,36 +1,6 @@
-# [Django REST framework][docs]
+# API REST ICLINICTEST
 
-[![build-status-image]][travis]
-[![coverage-status-image]][codecov]
-[![pypi-version]][pypi]
-
-**Awesome web-browsable Web APIs.**
-
-Full documentation for the project is available at [http://www.django-rest-framework.org][docs].
-
----
-
-# Funding
-
-REST framework is a *collaboratively funded project*. If you use
-REST framework commercially we strongly encourage you to invest in its
-continued development by [signing up for a paid plan][funding].
-
-The initial aim is to provide a single full-time position on REST framework.
-*Every single sign-up makes a significant impact towards making that possible.*
-
-[![][rover-img]][rover-url]
-[![][sentry-img]][sentry-url]
-[![][stream-img]][stream-url]
-[![][machinalis-img]][machinalis-url]
-[![][rollbar-img]][rollbar-url]
-[![][cadre-img]][cadre-url]
-
-Many thanks to all our [wonderful sponsors][sponsors], and in particular to our premium backers, [Rover][rover-url], [Sentry][sentry-url], [Stream][stream-url], [Machinalis][machinalis-url], [Rollbar][rollbar-url], and [Cadre][cadre-url].
-
----
-
-# Overview
+This is an API REST
 
 Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
@@ -52,8 +22,7 @@ There is a live example API for testing purposes, [available here][sandbox].
 
 # Requirements
 
-* Python (2.7, 3.4, 3.5, 3.6)
-* Django (1.10, 1.11, 2.0)
+* [Requirements.txt][requirements]
 
 # Installation
 
@@ -216,3 +185,6 @@ Send a description of the issue via email to [rest-framework-security@googlegrou
 
 [docs]: http://www.django-rest-framework.org/
 [security-mail]: mailto:rest-framework-security@googlegroups.com
+
+
+[requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
