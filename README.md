@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 * "***********" OU "***********"
 
-* Acesse [173.230.150.95/docs/][docs] e crie um banco de dados postgresql com as [configurações necessárias][set]
+* Acesse [173.230.150.95/docs/][docs]
 
 ----
 
