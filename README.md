@@ -15,7 +15,8 @@ Esta é uma API desenvolvida utilizando [Django REST framework][djangorest]
 * Instale os requerimentos necessários
 pip install -r requirements.txt
 * Configure o seu banco de dados no arquivo [settings.py][set]
-* Pelo terminal, rode "python manage.py runserver"
+* Para rodar os testes -> `"python manage.py test iclinicapp"` 
+* Pelo terminal, rode `"python manage.py runserver"`
 * Pelo browser, acesse "127.0.0.1:8000/docs/" para a documentação
 
 * "***********" OU "***********"
