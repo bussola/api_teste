@@ -48,6 +48,12 @@ Para fins de testes, todas as permissões dos usuários estão liberadas
 
 ----
 
+# Obvservações
+O projeto [173.230.150.95/docs/][docs] foi desenvolvido utilizando [Django][django], [Nginx][nginx], [Gunicorn][gunicorn] e [Postgres][postgres]
+Na documentação "/docs" foi utilizado [swagger][swagger].
+
+----
+
 # Testes
 
 Os testes estão em [iclinicproject/iclinicapp/tests/test_agenda.py][test]
@@ -60,3 +66,8 @@ Para rodar os testes -> `python manage.py test iclinicapp`
 [docs]:http://173.230.150.95/docs/
 [set]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicproject/settings.py#L80
 [test]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicapp/tests/test_agenda.py
+[django]:https://www.djangoproject.com/
+[nginx]:https://www.nginx.com/
+[gunicorn]:http://gunicorn.org/
+[postgres]:https://www.postgresql.org/
+[swagger]:https://swagger.io/
