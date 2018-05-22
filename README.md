@@ -12,7 +12,7 @@ Esta é uma API desenvolvida utilizando [Django REST framework][djangorest]
 # Instalação
 
 * Clone este repositório
-* Instale os requerimentos necessários
+* Instale os requerimentos necessários -- pip install -r requirements.txt
 * Pelo terminal, rode "python manage.py runserver"
 * Pelo browser, acesse "127.0.0.1:8000/docs/" para a documentação
 
@@ -40,7 +40,7 @@ Esta API representa um sistema de agendamento
 Opções da lista -> 'consulta','retorno', 'horario bloqueado'
 
 
-Depois de instalado, acesse "127.0.0.1:8000/docs/" `ou` [173.230.150.95/docs/][docs]
+Depois de instalado, acesse "127.0.0.1:8000/docs/" `OU` [173.230.150.95/docs/][docs]
 
 
 
