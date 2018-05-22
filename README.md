@@ -54,7 +54,7 @@ O projeto [173.230.150.95/docs/][docs] foi desenvolvido utilizando [Django][djan
 Na documentação "/docs" foi utilizado [swagger][swagger].
 
 
-* Como para logar em [173.230.150.95/docs/][docs]:
+* Para logar em [173.230.150.95/docs/][docs]:
 
 Acesse [173.230.150.95][docs1] e clique em `"Log in"`
 
