@@ -52,7 +52,7 @@ Para fins de testes, todas as permissões dos usuários estão liberadas
 
 Os testes estão em [iclinicproject/iclinicapp/tests/test_agenda.py][test]
 
-`python manage.py test iclinicapp` para rodar os testes
+Para rodar os testes -> `python manage.py test iclinicapp` 
 
 
 [requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
