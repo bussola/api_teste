@@ -38,9 +38,8 @@ Esta API representa um sistema de agendamento
   "paciente": "string",
   "procedimento": "lista"
 }
+Opções da lista "->" 'consulta','retorno', 'horario bloqueado'
 ```
-Opções da lista -> 'consulta','retorno', 'horario bloqueado'
-
 
 
 Depois de instalado, acesse "127.0.0.1:8000/docs/" `OU` [173.230.150.95/docs/][docs]
