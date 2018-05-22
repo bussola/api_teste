@@ -40,6 +40,7 @@ Esta API representa um sistema de agendamento
 Opções da lista -> 'consulta','retorno', 'horario bloqueado'
 
 
+
 Depois de instalado, acesse "127.0.0.1:8000/docs/" `OU` [173.230.150.95/docs/][docs]
 
 
