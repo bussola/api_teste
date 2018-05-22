@@ -1,41 +1,23 @@
 # API REST ICLINICTEST
 
-This is an API REST
-
-Django REST framework is a powerful and flexible toolkit for building Web APIs.
-
-Some reasons you might want to use REST framework:
-
-* The [Web browsable API][sandbox] is a huge usability win for your developers.
-* [Authentication policies][authentication] including optional packages for [OAuth1a][oauth1-section] and [OAuth2][oauth2-section].
-* [Serialization][serializers] that supports both [ORM][modelserializer-section] and [non-ORM][serializer-section] data sources.
-* Customizable all the way down - just use [regular function-based views][functionview-section] if you don't need the [more][generic-views] [powerful][viewsets] [features][routers].
-* [Extensive documentation][docs], and [great community support][group].
-
-There is a live example API for testing purposes, [available here][sandbox].
-
-**Below**: *Screenshot from the browsable API*
-
-![Screenshot][image]
+Esta é uma API desenvolvida utilizando [Django REST framework][djangorest]
 
 ----
 
-# Requirements
+# Requerimentos
 
+* Python 3.6
 * [Requirements.txt][requirements]
 
 # Installation
 
-Install using `pip`...
+* Clone este repositório
+* Instale os requerimentos necessários
+* Pelo terminal, rode "python manage.py runserver"
+* Pelo browser, digite o endereço "127.0.0.1:8000/docs/" para a documentação
 
-    pip install djangorestframework
+* "***********" OU "***********"
 
-Add `'rest_framework'` to your `INSTALLED_APPS` setting.
-
-    INSTALLED_APPS = (
-        ...
-        'rest_framework',
-    )
 
 # Example
 
@@ -144,47 +126,6 @@ If you believe you've found something in Django REST framework which has securit
 
 Send a description of the issue via email to [rest-framework-security@googlegroups.com][security-mail].  The project maintainers will then work with you to resolve any issues where required, prior to any public disclosure.
 
-[build-status-image]: https://secure.travis-ci.org/encode/django-rest-framework.svg?branch=master
-[travis]: https://travis-ci.org/encode/django-rest-framework?branch=master
-[coverage-status-image]: https://img.shields.io/codecov/c/github/encode/django-rest-framework/master.svg
-[codecov]: https://codecov.io/github/encode/django-rest-framework?branch=master
-[pypi-version]: https://img.shields.io/pypi/v/djangorestframework.svg
-[pypi]: https://pypi.org/project/djangorestframework/
-[twitter]: https://twitter.com/_tomchristie
-[group]: https://groups.google.com/forum/?fromgroups#!forum/django-rest-framework
-[sandbox]: https://restframework.herokuapp.com/
-
-[funding]: https://fund.django-rest-framework.org/topics/funding/
-[sponsors]: https://fund.django-rest-framework.org/topics/funding/#our-sponsors
-
-[rover-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/rover-readme.png
-[sentry-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/sentry-readme.png
-[stream-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/stream-readme.png
-[machinalis-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/machinalis-readme.png
-[rollbar-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/rollbar-readme.png
-[cadre-img]: https://raw.githubusercontent.com/encode/django-rest-framework/master/docs/img/premium/cadre-readme.png
-
-[rover-url]: http://jobs.rover.com/
-[sentry-url]: https://getsentry.com/welcome/
-[stream-url]: https://getstream.io/try-the-api/?utm_source=drf&utm_medium=banner&utm_campaign=drf
-[machinalis-url]: https://hello.machinalis.co.uk/
-[rollbar-url]: https://rollbar.com/
-[cadre-url]: https://cadre.com/
-
-[oauth1-section]: http://www.django-rest-framework.org/api-guide/authentication/#django-rest-framework-oauth
-[oauth2-section]: http://www.django-rest-framework.org/api-guide/authentication/#django-oauth-toolkit
-[serializer-section]: http://www.django-rest-framework.org/api-guide/serializers/#serializers
-[modelserializer-section]: http://www.django-rest-framework.org/api-guide/serializers/#modelserializer
-[functionview-section]: http://www.django-rest-framework.org/api-guide/views/#function-based-views
-[generic-views]: http://www.django-rest-framework.org/api-guide/generic-views/
-[viewsets]: http://www.django-rest-framework.org/api-guide/viewsets/
-[routers]: http://www.django-rest-framework.org/api-guide/routers/
-[serializers]: http://www.django-rest-framework.org/api-guide/serializers/
-[authentication]: http://www.django-rest-framework.org/api-guide/authentication/
-[image]: http://www.django-rest-framework.org/img/quickstart.png
-
-[docs]: http://www.django-rest-framework.org/
-[security-mail]: mailto:rest-framework-security@googlegroups.com
-
 
 [requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
+[djangorest]:https://github.com/encode/django-rest-framework
