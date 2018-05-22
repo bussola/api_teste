@@ -46,8 +46,13 @@ Depois de instalado, acesse "127.0.0.1:8000/docs/" `OU` [173.230.150.95/docs/][d
 
 Para fins de testes, todas as permissões dos usuários estão liberadas
 
+----
+
+# Testes
+
 Os testes estão em [iclinicproject/iclinicapp/tests/test_agenda.py][test]
-`python manage.py test iclinicapp`
+
+`python manage.py test iclinicapp` para rodar os testes
 
 
 [requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
