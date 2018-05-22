@@ -9,7 +9,7 @@ Esta é uma API desenvolvida utilizando [Django REST framework][djangorest]
 * Python 3.6
 * [Requirements.txt][requirements]
 
-# Installation
+# Instalação
 
 * Clone este repositório
 * Instale os requerimentos necessários
@@ -18,6 +18,7 @@ Esta é uma API desenvolvida utilizando [Django REST framework][djangorest]
 
 * "***********" OU "***********"
 
+* Acesse [173.230.150.95/docs/][docs]
 
 # Example
 
@@ -129,3 +130,4 @@ Send a description of the issue via email to [rest-framework-security@googlegrou
 
 [requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
 [djangorest]:https://github.com/encode/django-rest-framework
+[docs]:http://173.230.150.95/docs/
