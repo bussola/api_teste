@@ -28,11 +28,13 @@ Esta API representa um sistema de agendamento
 
 * Informações do agendamento:
 
-"data": "aaaa-mm-dd",
-"hora_inicio": "hh:mm:AM",
-"hora_final": "hh:mm:AM",
-"paciente": "string",
-"procedimento": "lista"
+{
+  "data": "aaaa-mm-dd",
+  "hora_inicio": "hh:mm:AM",
+  "hora_final": "hh:mm:AM",
+  "paciente": "string",
+  "procedimento": "lista"
+}
 Opções da lista -> 'consulta','retorno', 'horario bloqueado'
 
 
