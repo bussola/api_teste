@@ -45,6 +45,7 @@ Opções da lista "->" 'consulta', 'retorno' ou 'horario bloqueado'
 Depois de instalado, acesse "127.0.0.1:8000/docs/" `OU` [173.230.150.95/docs/][docs] para detalhes de http
 
 Para fins de testes, todas as permissões dos usuários estão liberadas
+
 Os testes estão em [iclinicproject/iclinicapp/tests/test_agenda.py][test]
 
 
@@ -52,4 +53,4 @@ Os testes estão em [iclinicproject/iclinicapp/tests/test_agenda.py][test]
 [djangorest]:https://github.com/encode/django-rest-framework
 [docs]:http://173.230.150.95/docs/
 [set]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicproject/settings.py#L80
-[test]:[https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicapp/tests/test_agenda.py]
+[test]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicapp/tests/test_agenda.py
