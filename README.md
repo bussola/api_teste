@@ -50,7 +50,17 @@ Para fins de testes, todas as permissões dos usuários estão liberadas
 
 # Obvservações
 O projeto [173.230.150.95/docs/][docs] foi desenvolvido utilizando [Django][django], [Nginx][nginx], [Gunicorn][gunicorn] e [Postgres][postgres]
+
 Na documentação "/docs" foi utilizado [swagger][swagger].
+
+
+* Como para logar em [173.230.150.95/docs/][docs]:
+
+Acesse [173.230.150.95][docs1] e clique em `"Log in"`
+
+Usuário: iclinic
+
+Senha: senha123
 
 ----
 
@@ -64,6 +74,7 @@ Para rodar os testes -> `python manage.py test iclinicapp`
 [requirements]:https://github.com/bussola/iclinic_teste/blob/master/requirements.txt
 [djangorest]:https://github.com/encode/django-rest-framework
 [docs]:http://173.230.150.95/docs/
+[docs1]:http://173.230.150.95
 [set]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicproject/settings.py#L80
 [test]:https://github.com/bussola/iclinic_teste/blob/master/iclinicproject/iclinicapp/tests/test_agenda.py
 [django]:https://www.djangoproject.com/
